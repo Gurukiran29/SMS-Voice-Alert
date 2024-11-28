@@ -1,11 +1,7 @@
-Here’s a structured and comprehensive **README.md** template for your project, tailored for GitHub:
-
----
-
-# SMS Alert Application  
+# SMS Voice Alert  
 
 ## Overview  
-The **SMS Alert Application** is an Android app that provides **real-time voice alerts**. It utilizes SMS interception to process incoming messages, decode their content, and trigger voice notifications via Text-to-Speech (TTS). The app is lightweight and runs seamlessly in the background.  
+The **SMS Voice Alert** is an Android app that provides **real-time voice alerts**. It utilizes SMS interception to process incoming messages, decode their content, and trigger voice notifications via Text-to-Speech (TTS). The app is lightweight and runs seamlessly in the background.  
 
 ---
 
