@@ -29,18 +29,19 @@ public class SmsReceiver extends BroadcastReceiver {
                     msgFrom = msgs[i].getOriginatingAddress();
                     msgBody += msgs[i].getMessageBody();
                 }
-                textToSpeech = new TextToSpeech(context, status -> {
-                    if (status == TextToSpeech.SUCCESS) {
-                        textToSpeech.setLanguage(Locale.ENGLISH);
-                        String alert = "Alert: " + msgBody;
-                        for (int i = 0; i < 3; i++) {
-                            textToSpeech.speak(alert, TextToSpeech.QUEUE_ADD, null, null);
+                if (msgBody.equalsIgnoreCase("Fire detected") || msgBody.equalsIgnoreCase("Smoke detected")){
+                    textToSpeech = new TextToSpeech(context, status -> {
+                        if (status == TextToSpeech.SUCCESS) {
+                            textToSpeech.setLanguage(Locale.ENGLISH);
+                            String alert = "Alert: " + msgBody;
+                            for (int i = 0; i < 3; i++) {
+                                textToSpeech.speak(alert, TextToSpeech.QUEUE_ADD, null, null);
+                            }
+                        } else {
+                            Log.e("TTS", "Initialization failed.");
                         }
-                    } else {
-                        Log.e("TTS", "Initialization failed.");
-                    }
-                });
-                
+                    });
+                }
             }
         }
     }
